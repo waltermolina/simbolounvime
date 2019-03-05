@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45966B4A-DC4C-40E9-8344-0E4CC62DA9CF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UNViMeSimbolo</RootNamespace>
+    <AssemblyName>UNViMeSimbolo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Models\UnvimeEscudo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnvimeEscudo.Context.cs</LastGenOutput>
+      <DependentUpon>UnvimeEscudo.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\UnvimeEscudo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UnvimeEscudo.edmx</DependentUpon>
+      <LastGenOutput>UnvimeEscudo.cs</LastGenOutput>
+    </Content>
+    <Content Include="RealTimeResults.html" />
+    <Content Include="View\css\common.css">
+      <DependentUpon>common.scss</DependentUpon>
+    </Content>
+    <Content Include="View\css\common.min.css">
+      <DependentUpon>common.css</DependentUpon>
+    </Content>
+    <Content Include="View\css\master.css">
+      <DependentUpon>master.scss</DependentUpon>
+    </Content>
+    <Content Include="View\css\master.min.css">
+      <DependentUpon>master.css</DependentUpon>
+    </Content>
+    <Content Include="View\css\mobileForm.css">
+      <DependentUpon>mobileForm.scss</DependentUpon>
+    </Content>
+    <Content Include="View\css\mobileForm.min.css">
+      <DependentUpon>mobileForm.css</DependentUpon>
+    </Content>
+    <Content Include="View\css\normalize.css">
+      <DependentUpon>normalize.scss</DependentUpon>
+    </Content>
+    <Content Include="View\css\normalize.min.css">
+      <DependentUpon>normalize.css</DependentUpon>
+    </Content>
+    <Content Include="View\css\realTimeResults.css">
+      <DependentUpon>realTimeResults.scss</DependentUpon>
+    </Content>
+    <Content Include="View\css\realTimeResults.min.css">
+      <DependentUpon>realTimeResults.css</DependentUpon>
+    </Content>
+    <Content Include="View\img\escudoAr.png" />
+    <Content Include="View\img\proyectoLogo-01.png" />
+    <Content Include="View\img\tachusoVioleta50.png" />
+    <Content Include="index.html" />
+    <Content Include="View\js\app.js" />
+    <Content Include="View\js\realtime.js" />
+    <Content Include="View\libs\datejs\core.js" />
+    <Content Include="View\libs\datejs\date-af-ZA.js" />
+    <Content Include="View\libs\datejs\date-ar-AE.js" />
+    <Content Include="View\libs\datejs\date-ar-BH.js" />
+    <Content Include="View\libs\datejs\date-ar-DZ.js" />
+    <Content Include="View\libs\datejs\date-ar-EG.js" />
+    <Content Include="View\libs\datejs\date-ar-IQ.js" />
+    <Content Include="View\libs\datejs\date-ar-JO.js" />
+    <Content Include="View\libs\datejs\date-ar-KW.js" />
+    <Content Include="View\libs\datejs\date-ar-LB.js" />
+    <Content Include="View\libs\datejs\date-ar-LY.js" />
+    <Content Include="View\libs\datejs\date-ar-MA.js" />
+    <Content Include="View\libs\datejs\date-ar-OM.js" />
+    <Content Include="View\libs\datejs\date-ar-QA.js" />
+    <Content Include="View\libs\datejs\date-ar-SA.js" />
+    <Content Include="View\libs\datejs\date-ar-SY.js" />
+    <Content Include="View\libs\datejs\date-ar-TN.js" />
+    <Content Include="View\libs\datejs\date-ar-YE.js" />
+    <Content Include="View\libs\datejs\date-az-Cyrl-AZ.js" />
+    <Content Include="View\libs\datejs\date-az-Latn-AZ.js" />
+    <Content Include="View\libs\datejs\date-be-BY.js" />
+    <Content Include="View\libs\datejs\date-bg-BG.js" />
+    <Content Include="View\libs\datejs\date-bs-Latn-BA.js" />
+    <Content Include="View\libs\datejs\date-ca-ES.js" />
+    <Content Include="View\libs\datejs\date-cs-CZ.js" />
+    <Content Include="View\libs\datejs\date-cy-GB.js" />
+    <Content Include="View\libs\datejs\date-da-DK.js" />
+    <Content Include="View\libs\datejs\date-de-AT.js" />
+    <Content Include="View\libs\datejs\date-de-CH.js" />
+    <Content Include="View\libs\datejs\date-de-DE.js" />
+    <Content Include="View\libs\datejs\date-de-LI.js" />
+    <Content Include="View\libs\datejs\date-de-LU.js" />
+    <Content Include="View\libs\datejs\date-dv-MV.js" />
+    <Content Include="View\libs\datejs\date-el-GR.js" />
+    <Content Include="View\libs\datejs\date-en-029.js" />
+    <Content Include="View\libs\datejs\date-en-AU.js" />
+    <Content Include="View\libs\datejs\date-en-BZ.js" />
+    <Content Include="View\libs\datejs\date-en-CA.js" />
+    <Content Include="View\libs\datejs\date-en-GB.js" />
+    <Content Include="View\libs\datejs\date-en-IE.js" />
+    <Content Include="View\libs\datejs\date-en-JM.js" />
+    <Content Include="View\libs\datejs\date-en-NZ.js" />
+    <Content Include="View\libs\datejs\date-en-PH.js" />
+    <Content Include="View\libs\datejs\date-en-TT.js" />
+    <Content Include="View\libs\datejs\date-en-US.js" />
+    <Content Include="View\libs\datejs\date-en-ZA.js" />
+    <Content Include="View\libs\datejs\date-en-ZW.js" />
+    <Content Include="View\libs\datejs\date-es-AR.js" />
+    <Content Include="View\libs\datejs\date-es-BO.js" />
+    <Content Include="View\libs\datejs\date-es-CL.js" />
+    <Content Include="View\libs\datejs\date-es-CO.js" />
+    <Content Include="View\libs\datejs\date-es-CR.js" />
+    <Content Include="View\libs\datejs\date-es-DO.js" />
+    <Content Include="View\libs\datejs\date-es-EC.js" />
+    <Content Include="View\libs\datejs\date-es-ES.js" />
+    <Content Include="View\libs\datejs\date-es-GT.js" />
+    <Content Include="View\libs\datejs\date-es-HN.js" />
+    <Content Include="View\libs\datejs\date-es-MX.js" />
+    <Content Include="View\libs\datejs\date-es-NI.js" />
+    <Content Include="View\libs\datejs\date-es-PA.js" />
+    <Content Include="View\libs\datejs\date-es-PE.js" />
+    <Content Include="View\libs\datejs\date-es-PR.js" />
+    <Content Include="View\libs\datejs\date-es-PY.js" />
+    <Content Include="View\libs\datejs\date-es-SV.js" />
+    <Content Include="View\libs\datejs\date-es-UY.js" />
+    <Content Include="View\libs\datejs\date-es-VE.js" />
+    <Content Include="View\libs\datejs\date-et-EE.js" />
+    <Content Include="View\libs\datejs\date-eu-ES.js" />
+    <Content Include="View\libs\datejs\date-fa-IR.js" />
+    <Content Include="View\libs\datejs\date-fi-FI.js" />
+    <Content Include="View\libs\datejs\date-fo-FO.js" />
+    <Content Include="View\libs\datejs\date-fr-BE.js" />
+    <Content Include="View\libs\datejs\date-fr-CA.js" />
+    <Content Include="View\libs\datejs\date-fr-CH.js" />
+    <Content Include="View\libs\datejs\date-fr-FR.js" />
+    <Content Include="View\libs\datejs\date-fr-LU.js" />
+    <Content Include="View\libs\datejs\date-fr-MC.js" />
+    <Content Include="View\libs\datejs\date-gl-ES.js" />
+    <Content Include="View\libs\datejs\date-gu-IN.js" />
+    <Content Include="View\libs\datejs\date-he-IL.js" />
+    <Content Include="View\libs\datejs\date-hi-IN.js" />
+    <Content Include="View\libs\datejs\date-hr-BA.js" />
+    <Content Include="View\libs\datejs\date-hr-HR.js" />
+    <Content Include="View\libs\datejs\date-hu-HU.js" />
+    <Content Include="View\libs\datejs\date-hy-AM.js" />
+    <Content Include="View\libs\datejs\date-id-ID.js" />
+    <Content Include="View\libs\datejs\date-is-IS.js" />
+    <Content Include="View\libs\datejs\date-it-CH.js" />
+    <Content Include="View\libs\datejs\date-it-IT.js" />
+    <Content Include="View\libs\datejs\date-ja-JP.js" />
+    <Content Include="View\libs\datejs\date-ka-GE.js" />
+    <Content Include="View\libs\datejs\date-kk-KZ.js" />
+    <Content Include="View\libs\datejs\date-kn-IN.js" />
+    <Content Include="View\libs\datejs\date-ko-KR.js" />
+    <Content Include="View\libs\datejs\date-kok-IN.js" />
+    <Content Include="View\libs\datejs\date-ky-KG.js" />
+    <Content Include="View\libs\datejs\date-lt-LT.js" />
+    <Content Include="View\libs\datejs\date-lv-LV.js" />
+    <Content Include="View\libs\datejs\date-mi-NZ.js" />
+    <Content Include="View\libs\datejs\date-mk-MK.js" />
+    <Content Include="View\libs\datejs\date-mn-MN.js" />
+    <Content Include="View\libs\datejs\date-mr-IN.js" />
+    <Content Include="View\libs\datejs\date-ms-BN.js" />
+    <Content Include="View\libs\datejs\date-ms-MY.js" />
+    <Content Include="View\libs\datejs\date-mt-MT.js" />
+    <Content Include="View\libs\datejs\date-nb-NO.js" />
+    <Content Include="View\libs\datejs\date-nl-BE.js" />
+    <Content Include="View\libs\datejs\date-nl-NL.js" />
+    <Content Include="View\libs\datejs\date-nn-NO.js" />
+    <Content Include="View\libs\datejs\date-ns-ZA.js" />
+    <Content Include="View\libs\datejs\date-pa-IN.js" />
+    <Content Include="View\libs\datejs\date-pl-PL.js" />
+    <Content Include="View\libs\datejs\date-pt-BR.js" />
+    <Content Include="View\libs\datejs\date-pt-PT.js" />
+    <Content Include="View\libs\datejs\date-quz-BO.js" />
+    <Content Include="View\libs\datejs\date-quz-EC.js" />
+    <Content Include="View\libs\datejs\date-quz-PE.js" />
+    <Content Include="View\libs\datejs\date-ro-RO.js" />
+    <Content Include="View\libs\datejs\date-ru-RU.js" />
+    <Content Include="View\libs\datejs\date-sa-IN.js" />
+    <Content Include="View\libs\datejs\date-se-FI.js" />
+    <Content Include="View\libs\datejs\date-se-NO.js" />
+    <Content Include="View\libs\datejs\date-se-SE.js" />
+    <Content Include="View\libs\datejs\date-sk-SK.js" />
+    <Content Include="View\libs\datejs\date-sl-SI.js" />
+    <Content Include="View\libs\datejs\date-sma-NO.js" />
+    <Content Include="View\libs\datejs\date-sma-SE.js" />
+    <Content Include="View\libs\datejs\date-smj-NO.js" />
+    <Content Include="View\libs\datejs\date-smj-SE.js" />
+    <Content Include="View\libs\datejs\date-smn-FI.js" />
+    <Content Include="View\libs\datejs\date-sms-FI.js" />
+    <Content Include="View\libs\datejs\date-sq-AL.js" />
+    <Content Include="View\libs\datejs\date-sr-Cyrl-BA.js" />
+    <Content Include="View\libs\datejs\date-sr-Cyrl-CS.js" />
+    <Content Include="View\libs\datejs\date-sr-Latn-BA.js" />
+    <Content Include="View\libs\datejs\date-sr-Latn-CS.js" />
+    <Content Include="View\libs\datejs\date-sv-FI.js" />
+    <Content Include="View\libs\datejs\date-sv-SE.js" />
+    <Content Include="View\libs\datejs\date-sw-KE.js" />
+    <Content Include="View\libs\datejs\date-syr-SY.js" />
+    <Content Include="View\libs\datejs\date-ta-IN.js" />
+    <Content Include="View\libs\datejs\date-te-IN.js" />
+    <Content Include="View\libs\datejs\date-th-TH.js" />
+    <Content Include="View\libs\datejs\date-tn-ZA.js" />
+    <Content Include="View\libs\datejs\date-tr-TR.js" />
+    <Content Include="View\libs\datejs\date-tt-RU.js" />
+    <Content Include="View\libs\datejs\date-uk-UA.js" />
+    <Content Include="View\libs\datejs\date-ur-PK.js" />
+    <Content Include="View\libs\datejs\date-uz-Cyrl-UZ.js" />
+    <Content Include="View\libs\datejs\date-uz-Latn-UZ.js" />
+    <Content Include="View\libs\datejs\date-vi-VN.js" />
+    <Content Include="View\libs\datejs\date-xh-ZA.js" />
+    <Content Include="View\libs\datejs\date-zh-CN.js" />
+    <Content Include="View\libs\datejs\date-zh-HK.js" />
+    <Content Include="View\libs\datejs\date-zh-MO.js" />
+    <Content Include="View\libs\datejs\date-zh-SG.js" />
+    <Content Include="View\libs\datejs\date-zh-TW.js" />
+    <Content Include="View\libs\datejs\date-zu-ZA.js" />
+    <Content Include="View\libs\datejs\date.js" />
+    <Content Include="View\libs\datejs\extras.js" />
+    <Content Include="View\libs\datejs\parser.js" />
+    <Content Include="View\libs\datejs\sugarpak.js" />
+    <Content Include="View\libs\datejs\time.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.en.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.es-419.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="View\libs\kendoui\js\cultures\kendo.culture.es.min.js" />
+    <Content Include="View\libs\kendoui\js\jquery.min.js" />
+    <Content Include="View\libs\kendoui\js\jszip.min.js" />
+    <Content Include="View\libs\kendoui\js\kendo.all.min.js" />
+    <Content Include="View\libs\kendoui\js\messages\kendo.messages.en-US.min.js" />
+    <Content Include="View\libs\kendoui\js\messages\kendo.messages.es-ES.min.js" />
+    <Content Include="View\libs\kendoui\js\pako_deflate.min.js" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="View\libs\kendoui\styles\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="View\libs\kendoui\styles\kendo.common-material.min.css" />
+    <Content Include="View\libs\kendoui\styles\kendo.common.min.css" />
+    <Content Include="View\libs\kendoui\styles\kendo.dataviz.material.min.css" />
+    <Content Include="View\libs\kendoui\styles\kendo.material.min.css" />
+    <Content Include="View\libs\kendoui\styles\kendo.material.mobile.min.css" />
+    <Content Include="View\libs\kendoui\styles\kendo.mobile.material.min.css" />
+    <Content Include="View\libs\kendoui\styles\kendo.rtl.min.css" />
+    <Content Include="View\libs\kendoui\styles\Material\editor.png" />
+    <Content Include="View\libs\kendoui\styles\Material\imagebrowser.png" />
+    <Content Include="View\libs\kendoui\styles\Material\indeterminate.gif" />
+    <Content Include="View\libs\kendoui\styles\Material\loading-image.gif" />
+    <Content Include="View\libs\kendoui\styles\Material\loading.gif" />
+    <Content Include="View\libs\kendoui\styles\Material\loading_2x.gif" />
+    <Content Include="View\libs\kendoui\styles\Material\markers.png" />
+    <Content Include="View\libs\kendoui\styles\Material\markers_2x.png" />
+    <Content Include="View\libs\kendoui\styles\Material\slider-h.gif" />
+    <Content Include="View\libs\kendoui\styles\Material\slider-v.gif" />
+    <Content Include="View\libs\kendoui\styles\Material\sprite.png" />
+    <Content Include="View\libs\kendoui\styles\Material\sprite_2x.png" />
+    <Content Include="View\libs\kendoui\styles\Material\sprite_kpi.png" />
+    <Content Include="View\libs\kendoui\styles\Material\sprite_kpi_2x.png" />
+    <Content Include="View\libs\kendoui\styles\textures\brushed-metal.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots1.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots10.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots11.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots12.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots13.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots2.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots3.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots4.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots5.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots6.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots7.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots8.png" />
+    <Content Include="View\libs\kendoui\styles\textures\dots9.png" />
+    <Content Include="View\libs\kendoui\styles\textures\glass-lighter.png" />
+    <Content Include="View\libs\kendoui\styles\textures\glass.png" />
+    <Content Include="View\libs\kendoui\styles\textures\highlight.png" />
+    <Content Include="View\libs\kendoui\styles\textures\hsv-gradient.png" />
+    <Content Include="View\libs\kendoui\styles\textures\hue.png" />
+    <Content Include="View\libs\kendoui\styles\textures\leather1.png" />
+    <Content Include="View\libs\kendoui\styles\textures\leather2.png" />
+    <Content Include="View\libs\kendoui\styles\textures\noise.png" />
+    <Content Include="View\libs\kendoui\styles\textures\stripe1.png" />
+    <Content Include="View\libs\kendoui\styles\textures\stripe2.png" />
+    <Content Include="View\libs\kendoui\styles\textures\stripe3.png" />
+    <Content Include="View\libs\kendoui\styles\textures\stripe4.png" />
+    <Content Include="View\libs\kendoui\styles\textures\stripe5.png" />
+    <Content Include="View\libs\kendoui\styles\textures\stripe6.png" />
+    <Content Include="View\libs\kendoui\styles\textures\transparency.png" />
+    <Content Include="View\libs\kendoui\styles\textures\transtexture.png" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\UnvimeEscudo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UnvimeEscudo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UnvimeEscudo.edmx.diagram">
+      <DependentUpon>UnvimeEscudo.edmx</DependentUpon>
+    </Content>
+    <Content Include="View\css\realTimeResults.scss" />
+    <Content Include="View\css\mobileForm.scss" />
+    <Content Include="View\css\_variables.scss" />
+    <None Include="Properties\PublishProfiles\unvime - Web Deploy.pubxml" />
+    <None Include="View\libs\kendoui\vsdoc\kendo.all-vsdoc.js" />
+    <None Include="View\libs\kendoui\vsdoc\kendo.all.min.intellisense.js" />
+    <Content Include="View\libs\materialize\css\materialize.min.css" />
+    <Content Include="View\libs\materialize\js\materialize.min.js" />
+    <Content Include="View\libs\swiper\css\swiper.min.css" />
+    <Content Include="View\libs\swiper\js\swiper.jquery.min.js" />
+    <Content Include="View\libs\swiper\js\swiper.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EslogansController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Eslogan.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllCountsForTeam_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAllWords_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCountTopAzul_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCountTopCeleste_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCountTopFiveEslogans_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCountTopNaranja_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCountTopVerde_Result.cs">
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnvimeEscudo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnvimeEscudo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnvimeEscudo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnvimeEscudo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnvimeEscudo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnvimeEscudo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="View\css\common.scss" />
+    <Content Include="View\css\master.scss" />
+    <Content Include="View\css\normalize.scss" />
+    <Content Include="View\libs\kendoui\js\jquery.min.map" />
+    <Content Include="View\libs\kendoui\js\kendo.all.min.js.map" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="View\libs\kendoui\styles\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="View\libs\kendoui\styles\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="View\libs\kendoui\styles\kendo.rtl.min.css.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="View\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50048</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50048/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

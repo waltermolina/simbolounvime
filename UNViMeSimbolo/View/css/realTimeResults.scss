@@ -1,0 +1,290 @@
+﻿@import "_variables.scss";
+
+html {
+    font-size: 16px;
+    font-size: 62.5% !important;
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#realTimeApp {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+}
+
+#leftPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 24rem;
+    background: rgba(0,0,0,0.5);
+
+    #schoolsStrip {
+        height: 2rem;
+        position: absolute;
+        width: 100%;
+        top: 0;
+
+        > .schools {
+            width: 20rem;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -10rem;
+
+            > .school {
+                width: 25%;
+                height: 100%;
+                float: left;
+            }
+
+            > .health {
+                background: $skyBlue;
+            }
+
+            > .ambient {
+                background: $green;
+            }
+
+            > .business {
+                background: $orange;
+            }
+
+            > .engineer {
+                background: $blue;
+            }
+        }
+    }
+
+    > header {
+        color: $textGray;
+        text-align: center;
+        margin-top: 4rem;
+
+        > h1 {
+            width: 20rem;
+            margin: 0 auto;
+            padding: 1rem;
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 4.2rem;
+            text-align: left;
+            background: rgba(0,0,0,.3);
+            box-sizing: border-box;
+        }
+
+        > h2 {
+            width: 20rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-align: left;
+            margin: 0 auto;
+            padding: 1rem 0;
+            color: rgba(255,255,255,.7);
+            box-sizing: border-box;
+        }
+    }
+
+    #proyectoLogo {
+        width: 20rem;
+        position: relative;
+        height: 4rem;
+        margin: 2rem auto;
+
+        > img {
+            width: 4rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        > .text {
+            font-size: 1.2rem;
+            height: 4rem;
+            line-height: 1.3rem;
+            position: absolute;
+            top: 0;
+            left: 4.5rem;
+            right: 0;
+            font-weight: 200;
+            color: rgba(255,255,255,0.8);
+        }
+    }
+}
+    
+
+#mainArea{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 24rem;
+    right: 0;
+}
+
+
+#left-side {
+    position: absolute;
+    top: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    width: 60%;
+}
+
+#topAll {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 0.5rem;
+    bottom: 22rem;
+    background: rgba(255,255,255,0.2);
+
+    #top5PieChart {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#topBySchool {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 0.5rem;
+    height: 20rem;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+
+    > .school {
+        float: left;
+        width: 20%;
+        height: 100%;
+        box-shadow: 0 0 4rem 0 rgba(0,0,0,.5);
+        padding: 1rem;
+        box-sizing: border-box;
+        line-height: 18rem;
+        text-align: center;
+        font-size: 8rem;
+        font-weight: 200;
+        color: #fff;
+        text-shadow: 0 0 7rem #000, 0 0 5rem #000, 0 0 1rem #000;
+    }
+
+    > .school1 {
+        background: $grupoAzul;
+    }
+
+    > .school2 {
+        background: $grupoAmarillo;
+    }
+
+    > .school3 {
+        background: $grupoRojo;
+    }
+
+    > .school4 {
+        background: $grupoVerde;
+    }
+
+    > .school5 {
+        background: $grupoBlanco;
+    }
+}
+
+#right-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+}
+
+div#topCounter {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    left: 0.5rem;
+    height: 5rem;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+
+    > i {
+        position: absolute;
+        bottom: -1.2rem;
+        left: 0rem;
+        font-size: 6rem;
+        color: rgba(0,0,0,0.5);
+    }
+
+    > h1 {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        line-height: 5rem;
+        font-size: 5rem;
+        text-align: center;
+    }
+}
+
+#wordsList {
+    position: absolute;
+    top: 7rem;
+    left: 0.5rem;
+    right: 1rem;
+    bottom: 1rem;
+
+    #wordsListView {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.8);
+        border: none;
+        overflow: auto;
+
+        .word-holder {
+            height: 4rem;
+            line-height: 4rem;
+            border-bottom: 0.1rem solid rgba(0,0,0,0.2);
+            padding: 0 1rem;
+            overflow: hidden;
+
+            > .aWord {
+                font-size: 2rem;
+                color: #222;
+                margin-right: 1rem;
+            }
+
+            > .badge {
+                background: rgba(0,0,0,0.5);
+                color: #fff;
+                padding: 0 1rem;
+                height: 3rem;
+                margin-top: 0.5rem;
+                line-height: 3rem;
+                font-size: 1.5rem;
+                border-radius: 1.5rem;
+            }
+        }
+    }
+}
+    

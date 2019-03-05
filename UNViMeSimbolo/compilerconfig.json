@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "View/css/normalize.css",
+    "inputFile": "View/css/normalize.scss"
+  },
+  {
+    "outputFile": "View/css/master.css",
+    "inputFile": "View/css/master.scss"
+  },
+  {
+    "outputFile": "View/css/common.css",
+    "inputFile": "View/css/common.scss"
+  },
+  {
+    "outputFile": "View/css/realTimeResults.css",
+    "inputFile": "View/css/realTimeResults.scss"
+  },
+  {
+    "outputFile": "View/css/mobileForm.css",
+    "inputFile": "View/css/mobileForm.scss"
+  }
+]

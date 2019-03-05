@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>La UNViMe elige sus símbolos</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv-"X-UA-Compatible" content="IE=edge" />
+
+    <meta name="author" content="tachuso.com">
+    <meta property="og:url" content="unvimesimbolos.azurewebsites.net" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="La UNViMe elige sus símbolos" />
+    <meta property="og:description" content="El Director de la Escuela de Gestión de Empresas y Economía de la Universidad Nacional de Villa Mercedes, Lic. Esp. Fernando Javier Quiroga Villegas, tiene el agrado de invitarlo a formar parte de la Jornada de Integración institucional “La UNViMe elige sus símbolos” en la que toda nuestra comunidad universitaria participará de la creación del escudo oﬁcial que represente la historia, los valores y los principios fundamentales de esta Casa de Estudios. Se realizará el viernes 3 de junio de 2016, de 15:30 hs. a 20:30 hs. en la sede de Urquiza 74, 2° piso y su presencia y aporte, serán de primordial importancia en esta fecha histórica para nuestra Universidad. " />
+
+
+    <!-- Normalize CSS -->
+    <link href="View/css/normalize.min.css" rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.6.50/css/materialdesignicons.min.css">
+
+    <script src="https://use.fontawesome.com/9656256365.js"></script>
+
+    <!-- KENDO -->
+    <link href="View/libs/kendoui/styles/kendo.common-material.min.css" rel="stylesheet" />
+    <link href="View/libs/kendoui/styles/kendo.material.min.css" rel="stylesheet" />
+
+    <!--Materialize CSS-->
+    <link href="View/libs/materialize/css/materialize.min.css" rel="stylesheet" />
+
+    <!--Swiper CSS-->
+    <link href="View/libs/swiper/css/swiper.min.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href="View/css/common.min.css" rel="stylesheet" />
+    <link href="View/css/master.min.css" rel="stylesheet" />
+    <link href="View/css/mobileForm.min.css" rel="stylesheet" />
+    <!-- If posible, keep all the js files at the bottom of the page, just before </body> tag... -->
+
+</head>
+<body class="overflow-hidden">
+
+    <div id="background">
+        <img src="View/img/escudoAr.png" />
+    </div>
+    <div id="laNegra-app" class="">
+
+        <div id="homeView">
+            <div id="topStrip">
+                <div class="schools">
+                    <div class="school health"></div>
+                    <div class="school ambient"></div>
+                    <div class="school business"></div>
+                    <div class="school engineer"></div>
+                </div>
+            </div>
+
+            <header>
+                <h1>
+                    <span class="display-block">LA <span class="orange-text">UNViMe</span></span>
+                    <span class="display-block">ELIGE SUS</span>
+                    <span class="display-block">SÍMBOLOS</span>
+                </h1>
+                <h2>
+                    <span class="display-block">Jornada de integración participativa</span>
+                    <span class="display-block">para la creación del escudo institucional</span>
+                    <span class="display-block">de la Universidad Nacional de Villa Mercedes</span>
+                </h2>
+
+            </header>
+            <section class="body">
+                <h1></h1>
+                <button id="go" data-target="fillForm" class="btn modal-trigger waves-effect waves-light orange lighten-1 black-text">Participá<i class="mdi mdi-human-greeting right"></i></button>
+            </section>
+
+        </div>
+        
+        <div id="fillForm" class="modal bottom-sheet">
+            <div class="modal-content white-text">
+                <h4 class="">¡Completa el formulario con tus datos!</h4>
+                <p class="">Te invitamos a que compartas con nosotros dos o tres palabras representativas de los valores que deben destacarse en el escudo de la UNViMe. Cada palabra debe estar separada por un espacio o por una coma.</p>
+
+                <div class="formcontainer overflow-hidden">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="mdi mdi-vector-square prefix"></i>
+                            <select id="group">
+                                <option value="1">Azul</option>
+                                <option value="2">Amarillo</option>
+                                <option value="3">Rojo</option>
+                                <option value="4">Verde</option>
+                                <option value="5">Blanco</option>
+                            </select>
+                            <label>Elegí el grupo en el que participas</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="mdi mdi-message-reply-text prefix"></i>
+                            <input id="holdTheWord" type="text">
+                            <label for="holdTheWord">Palabras</label>
+                        </div>
+                        
+                        <div class="input-field col s12">
+                            <button id="submit" class="right btn waves-effect waves-light orange ligthen-1 black-text">
+                                Enviar<i class="mdi mdi-send right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="row customCard" id="thanksCard" style="display: none">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <div id="proyectoLogo">
+                            <img src="View/img/proyectoLogo-01.png">
+                            <div class="text">PROYECTO DE LA TECNICATURA UNIVERSITARIA EN DISEÑO DE COMUNICACIÓN</div>
+                        </div>
+                        <span class="title card-title">¡Gracias por tu aporte!</span>
+                        <p class="">Acá va un texto de agradecimiento... quizas podemos avisar que hay posibilidad de volver a cargar otra palabra...</p>
+                        
+                    </div>
+                    <div class="card-action">
+                        <button id="backToHome" class="btn waves-effect waves-light orange lighten-1 black-text">Volver<i class="mdi mdi-keyboard-backspace left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script id="errorTemplate" type="text/x-kendo-template">
+        <div class="wrong-pass">
+            <h3>#= title #</h3>
+            <p>#= message #</p>
+        </div>
+    </script>
+
+    <script src="View/libs/kendoui/js/jquery.min.js"></script>
+    <script src="View/libs/kendoui/js/kendo.all.min.js"></script>
+    <script src="View/libs/materialize/js/materialize.min.js"></script>
+    <script src="View/js/app.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-70674159-3', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UnvimeEscudoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Eslogan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Team" Type="int" />
+          <Property Name="Hour" Type="datetime" />
+          <Property Name="WordChooses" Type="nvarchar(max)" />
+        </EntityType>
+        <Function Name="GetAllCountsForTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllWords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCountTopAzul" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCountTopCeleste" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCountTopFiveEslogans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCountTopNaranja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCountTopVerde" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="UnvimeEscudoModelStoreContainer">
+          <EntitySet Name="Eslogan" EntityType="Self.Eslogan" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UnvimeEscudoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="UnvimeEscudoEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="GetCountTopAzul" ReturnType="Collection(UnvimeEscudoModel.GetCountTopAzul_Result)" />
+          <FunctionImport Name="GetCountTopCeleste" ReturnType="Collection(UnvimeEscudoModel.GetCountTopCeleste_Result)" />
+          <FunctionImport Name="GetCountTopFiveEslogans" ReturnType="Collection(UnvimeEscudoModel.GetCountTopFiveEslogans_Result)" />
+          <FunctionImport Name="GetCountTopNaranja" ReturnType="Collection(UnvimeEscudoModel.GetCountTopNaranja_Result)" />
+          <FunctionImport Name="GetCountTopVerde" ReturnType="Collection(UnvimeEscudoModel.GetCountTopVerde_Result)" />
+          <EntitySet Name="Eslogan" EntityType="UnvimeEscudoModel.Eslogan" />
+          <FunctionImport Name="GetAllCountsForTeam" ReturnType="Collection(UnvimeEscudoModel.GetAllCountsForTeam_Result)" />
+          <FunctionImport Name="GetAllWords" ReturnType="Collection(UnvimeEscudoModel.GetAllWords_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetCountTopAzul_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="Int32" Name="NumberWords" Nullable="true" />
+          <Property Type="String" Name="Words" Nullable="true" />
+          <Property Type="Int32" Name="Equipo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetCountTopCeleste_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="Int32" Name="NumberWords" Nullable="true" />
+          <Property Type="String" Name="Words" Nullable="true" />
+          <Property Type="Int32" Name="Equipo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetCountTopFiveEslogans_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="Int32" Name="NumberWords" Nullable="true" />
+          <Property Type="String" Name="Words" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetCountTopNaranja_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="Int32" Name="NumberWords" Nullable="true" />
+          <Property Type="String" Name="Words" Nullable="true" />
+          <Property Type="Int32" Name="Equipo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetCountTopVerde_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="Int32" Name="NumberWords" Nullable="true" />
+          <Property Type="String" Name="Words" Nullable="true" />
+          <Property Type="Int32" Name="Equipo" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Eslogan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Team" Type="Int32" />
+          <Property Name="Hour" Type="DateTime" Precision="3" />
+          <Property Name="WordChooses" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="GetAllCountsForTeam_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="Int32" Name="Numbers" Nullable="true" />
+          <Property Type="Int32" Name="Team" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetAllWords_Result">
+          <Property Type="Int32" Name="IdOutput" Nullable="false" />
+          <Property Type="String" Name="Words" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UnvimeEscudoModelStoreContainer" CdmEntityContainer="UnvimeEscudoEntities">
+          <FunctionImportMapping FunctionImportName="GetCountTopAzul" FunctionName="UnvimeEscudoModel.Store.GetCountTopAzul">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetCountTopAzul_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="NumberWords" ColumnName="NumberWords" />
+                <ScalarProperty Name="Words" ColumnName="Words" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCountTopCeleste" FunctionName="UnvimeEscudoModel.Store.GetCountTopCeleste">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetCountTopCeleste_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="NumberWords" ColumnName="NumberWords" />
+                <ScalarProperty Name="Words" ColumnName="Words" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCountTopFiveEslogans" FunctionName="UnvimeEscudoModel.Store.GetCountTopFiveEslogans">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetCountTopFiveEslogans_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="NumberWords" ColumnName="NumberWords" />
+                <ScalarProperty Name="Words" ColumnName="Words" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCountTopNaranja" FunctionName="UnvimeEscudoModel.Store.GetCountTopNaranja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetCountTopNaranja_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="NumberWords" ColumnName="NumberWords" />
+                <ScalarProperty Name="Words" ColumnName="Words" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCountTopVerde" FunctionName="UnvimeEscudoModel.Store.GetCountTopVerde">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetCountTopVerde_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="NumberWords" ColumnName="NumberWords" />
+                <ScalarProperty Name="Words" ColumnName="Words" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Eslogan">
+            <EntityTypeMapping TypeName="UnvimeEscudoModel.Eslogan">
+              <MappingFragment StoreEntitySet="Eslogan">
+                <ScalarProperty Name="WordChooses" ColumnName="WordChooses" />
+                <ScalarProperty Name="Hour" ColumnName="Hour" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllCountsForTeam" FunctionName="UnvimeEscudoModel.Store.GetAllCountsForTeam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetAllCountsForTeam_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="Numbers" ColumnName="Numbers" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllWords" FunctionName="UnvimeEscudoModel.Store.GetAllWords">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UnvimeEscudoModel.GetAllWords_Result">
+                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="Words" ColumnName="Words" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

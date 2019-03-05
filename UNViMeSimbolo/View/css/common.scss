@@ -1,0 +1,411 @@
+﻿/*! common.css v0.0.1 | by waltermolina | GPL V3 License | https://github.com/waltermolina/CommonCSS */
+$var1 : 'aaa';
+
+/*#region Selection Related*/
+::-moz-selection {
+    color: #fff;
+    background: #8080ff;
+}
+
+::selection {
+    color: #fff;
+    background: #8080ff;
+}
+
+.disable-user-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*#endregion*/
+
+/*#region Display*/
+
+.display-none,
+.hidden {
+    display: none !important;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.display-inline-block {
+    display: inline-block !important;
+}
+
+.display-flex {
+    display: flex !important;
+}
+
+.display-inline-flex {
+    display: inline-flex !important;
+}
+
+.display-inline-table {
+    display: inline-table !important;
+}
+
+.display-list-item {
+    display: list-item !important;
+}
+/*#endregion*/
+
+/*#region Overflow*/
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.overflow-no-content {
+    overflow: no-content;
+}
+
+.overflow-no-display {
+    overflow: no-display;
+}
+/*#endregion*/
+
+/*#region Position*/
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-static {
+    position: static;
+}
+/*#endregion*/
+
+/*#region Width*/
+.width-100{
+    width: 100%;
+}
+/*#endregion*/
+
+/*#region Cursor Types*/
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+.cursor-crosshair {
+    cursor: crosshair;
+}
+
+.cursor-help {
+    cursor: help;
+}
+
+.cursor-wait {
+    cursor: wait;
+}
+/*#endregion*/
+
+/*Input and Buttons*/
+.no-outline {
+    outline: none;
+}
+
+
+/*#region Font weight*/
+.font-weight-100,
+.font-weight-thin {
+    font-weight: 100 !important;
+}
+
+.font-weight-200,
+.font-weight-extra-light {
+    font-weight: 200 !important;
+}
+
+.font-weight-300,
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-400,
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.font-weight-500,
+.font-weight-medium {
+    font-weight: 500 !important;
+}
+
+.font-weight-600,
+.font-weight-semi-bold {
+    font-weight: 600 !important;
+}
+
+.font-weight-700,
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.font-weight-800,
+.font-weight-extra-bold {
+    font-weight: 800 !important;
+}
+
+.font-weight-900,
+.font-weight-ultra-bold {
+    font-weight: 900 !important;
+}
+/*#endregion*/
+
+/*#region Font Style*/
+.font-style-normal {
+    font-style: normal !important;
+}
+
+.font-style-italic {
+    font-style: italic !important;
+}
+/*#endregion*/
+
+/*#region Font Size*/
+
+@for $i from 10 through 50 {
+  .font-size-#{$i} { font-size: $i/10+rem; }
+}
+
+/*#endregion*/
+
+/*#region Text Transform*/
+.text-transfrom-uppercase {
+    text-transform: uppercase;
+}
+
+.text-transform-lowercase {
+    text-transform: lowercase;
+}
+
+.text-transfrom-capitalize {
+    text-transform: capitalize;
+}
+
+.text-transform-none {
+    text-transform: none;
+}
+/*#endregion*/
+
+/*#region Text Align*/
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+/*#endregion*/
+
+/*#region Floating*/
+.left {
+    float: left !important;
+}
+.right {
+    float: right !important;
+}
+
+/*Floating Clear*/
+.clr {
+    clear: both;
+}
+/*#endregion*/
+
+/*#region Vertical Align*/
+.vertical-align-baseline {
+    vertical-align: baseline !important;
+}
+
+.vertical-align-sub {
+    vertical-align: sub !important;
+}
+
+.vertical-align-super {
+    vertical-align: super !important;
+}
+
+.vertical-align-top {
+    vertical-align: top !important;
+}
+
+.vertical-align-text-top {
+    vertical-align: top !important;
+}
+
+.vertical-align-middle {
+    vertical-align: middle !important;
+}
+
+.vertical-align-bottom {
+    vertical-align: bottom !important;
+}
+
+.vertical-align-text-bottom {
+    vertical-align: bottom !important;
+}
+/*#endregion*/
+
+/*#region No Padding*/
+.no-padding,
+.no-padding-h,
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.no-padding,
+.no-padding-h,
+.no-padding-right {
+    padding-right: 0 !important;
+}
+
+.no-padding,
+.no-padding-v,
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+.no-padding,
+.no-padding-v,
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+/*#endregion*/
+
+/*#region No Margin*/
+.no-margin,
+.no-margin-h,
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.no-margin,
+.no-margin-h,
+.no-margin-right {
+    margin-right: 0 !important;
+}
+
+.no-margin,
+.no-margin-v,
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.no-margin,
+.no-margin-v,
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+/*#endregion*/
+
+/*#region No Border*/
+.no-border,
+.no-border-h,
+.no-border-left {
+    border-left: none !important;
+}
+
+.no-border,
+.no-border-h,
+.no-border-right {
+    border-right: none !important;
+}
+
+.no-border,
+.no-border-v,
+.no-border-top {
+    border-top: none !important;
+}
+
+.no-border,
+.no-border-v,
+.no-border-bottom {
+    border-bottom: none !important;
+}
+/*#endregion*/
+
+/*#region Blur*/
+.blurred-1 {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+}
+
+.blurred-3 {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.blurred-5 {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.blurred-10 {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+/*#endregion*/
+
+/*#region Content Editable*/
+/*Content Editable*/
+[contenteditable='true'] {
+    cursor: text;
+}
+
+[contenteditable='false'] {
+    cursor: default;
+}
+/*#endregion*/
+
+/*#region Edges */
+.edges-0,
+.top-0 {
+    top: 0;
+}
+.edges-0,
+.right-0 {
+    right: 0;
+}
+.edges-0,
+.bottom-0 {
+    bottom: 0;
+}
+.edges-0,
+.left-0 {
+    left: 0;
+}
+/*#endregion*/
